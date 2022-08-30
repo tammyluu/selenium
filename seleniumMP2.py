@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 
 browser = webdriver.Chrome(executable_path="C:/Users/59013-30-07/AppData/Local/Programs/Python/chromedriver.exe")
-browser.get('http://10.115.57.132:80/maPage.html')
+browser.get('http://10.115.57.192:8080/mapagefatima.html')
 
 testNom = 'toto'
 
