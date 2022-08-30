@@ -5,8 +5,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
 
+
 browser = webdriver.Chrome(executable_path="C:/Users/59013-30-07/AppData/Local/Programs/Python/chromedriver.exe")
-browser.get('http://10.115.57.192:8080/mapagefatima.html')
+#browser.get('http://10.115.57.132:80/maPage.html')
+browser.get('./maPage.html')
+
 
 testNom = 'toto'
 
@@ -27,5 +30,7 @@ else:
 
 assert result == testNom.upper()
 
-time.sleep(1)
-#browser.quit()
+
+time.sleep(20)
+browser.quit()
+
