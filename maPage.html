@@ -10,11 +10,21 @@
             saisie = saisie.toUpperCase();
             document.getElementById( 'resultat' ).innerHTML = saisie; 
         }
+        function calcule()
+        {
+            saisie = document.getElementById( 'saisie' ).value; 
+            resultat = eval (saisie);
+            document.getElementById( 'res' ).innerHTML = saisie; 
+        }
     </script>
 </head>
-<body>
-    <input  name="nom" id="nom" placeholder="tape ton nom">
-    <button  name='bouton' id='bouton' onclick="majuscule()">UPPER</button>
-    <div name= "resultat" id="resultat"></div>
-</body>
+    <body>
+        <input      name="nom"          id="nom" placeholder="tapez ton nom">
+        <button     name='bouton'       id='bouton' onclick="majuscule()">UPPER</button>
+        <div        name= "resultat"    id="resultat">...</div>
+        <input      name="saisie"       id="saisie" placeholder="tapez un calcule">
+        <button     name='go'           id='go' onclick="calcule()">GO UP !!</button>
+        <div        name= "res"         id="res">...</div>
+        
+    </body>
 </html>

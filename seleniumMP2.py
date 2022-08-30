@@ -7,8 +7,8 @@ from selenium.webdriver.common.by import By
 
 
 browser = webdriver.Chrome(executable_path="C:/Users/59013-30-07/AppData/Local/Programs/Python/chromedriver.exe")
-#browser.get('http://10.115.57.132:80/maPage.html')
-browser.get('./maPage.html')
+browser.get('http://10.115.57.148:8080/maPage.html')
+#browser.get('./maPage.html')
 
 
 testNom = 'toto'
