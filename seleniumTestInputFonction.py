@@ -18,48 +18,40 @@ browser.get('http://10.115.57.132:80/maPage.html')
 #browser.get('http://10.115.57.130:8080/MapageF.html')
 #browser.get('./maPage.html')
 
-
-def testInput( testNom ):
-    elem = browser.find_element(By.NAME, 'nom')  # Find the search box
+def testInput( idChamp, idBouton, idResultat, entree, sortie ):
+    elem = browser.find_element(By.ID, idChamp )  # Find the search box
     elem.clear()
-    elem.send_keys( testNom )
+    elem.send_keys( entree )
 
-    bouton = browser.find_element(By.NAME, 'bouton')
+    bouton = browser.find_element(By.ID, idBouton )
     bouton.click()
 
-    div = browser.find_element(By.NAME, 'resultat')
+    div = browser.find_element(By.ID, idResultat)
     result = div. get_attribute( 'innerHTML' )
 
-    print( 'test : '+testNom, end =' ' )
-    if result == testNom.upper():
+    print( 'test : ' + entree, end =' ' )
+    if result == sortie:
         print( 'OK' )
     else: 
         print( 'KO' )
+
+
+
+
+def testMaj( testNom ):
+    testInput( 'nom', 'bouton', 'resultat', testNom, testNom.upper())
 
 
 print( "test majuscule ------------------------------")
 
-testInput( 'toto' )
-testInput( 'tété' )
-testInput( '1234' )
+aTester=[ 'toto', 'rémi', '1234'  ]
+for mot in aTester:
+    testMaj( mot )
 
 print( "test calcul ------------------------------")
 def testCalcul( expression, resultat ):
-    elem = browser.find_element(By.NAME, 'saisie')  # Find the search box
-    elem.clear()
-    elem.send_keys( expression )
+    testInput( 'saisie', 'go', 'res', expression, resultat )
 
-    bouton = browser.find_element(By.NAME, 'go')
-    bouton.click()
-
-    div = browser.find_element(By.NAME, 'res')
-    result = div. get_attribute( 'innerHTML' )
-
-    print( 'test : '+ expression, end =' ' )
-    if result == resultat:
-        print( 'OK' )
-    else: 
-        print( 'KO' )
 
 testCalcul( '2+4', '6')
 testCalcul( '2-4', '-2')
