@@ -47,7 +47,7 @@ print( "test majuscule ------------------------------")
 aTester=[ 'toto', 'rémi', '1234'  ]
 for mot in aTester:
     testMaj( mot )
-    
+
 # fonction for calcul
 print( "test calcul ------------------------------")
 def testCalcul( expression, resultat ):
@@ -63,5 +63,5 @@ testCalcul( '2*4', '8')
 
 #assert result == testNom.upper()
 
-#time.sleep(1)
+time.sleep(1)
 browser.quit()

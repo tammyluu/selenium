@@ -28,7 +28,7 @@ def testUpper (testNom) :
 def testCalc (IN, OUT) :
     testInput( browser, 'saisie', 'go', 'res', IN, OUT )
     
-print ("===== Test capitalizer =======")
+print ("===== Test capitalize =======")
 toDo =[' toto', ' tété' , '1234']
 for mot in toDo:
     testUpper( mot )
@@ -38,5 +38,5 @@ print ("===== Test Calcul =======")
 testCalc( '2+3', '5')
 
 
-time.sleep(2)
-#browser.quit()
+time.sleep(1)
+browser.quit()
