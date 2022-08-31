@@ -32,7 +32,9 @@ print ("===== Test capitalizer =======")
 toDo =[' toto', ' tété' , '1234']
 for mot in toDo:
     testUpper( mot )
+
 print ("===== Test Calcul =======")
+
 testCalc( '2+3', '5')
 
 

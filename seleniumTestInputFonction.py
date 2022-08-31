@@ -6,18 +6,18 @@ import time
 # pip install -U selenium
 # pip install webdriver-manager
 from unittest import result
-from selenium import webdriver
+from selenium import webdriver # import webdriver from selenium package
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+browser = webdriver.Chrome(service=Service(ChromeDriverManager().install())) # open chrôme
 
-browser.get('http://10.115.57.132:80/maPage.html')
+browser.get('http://10.115.57.132:80/maPage.html') #navigate to home page "maPage"
 #browser.get('http://10.115.57.130:8080/MapageF.html')
 #browser.get('./maPage.html')
-
+# fonction for test Input and Output
 def testInput( idChamp, idBouton, idResultat, entree, sortie ):
     elem = browser.find_element(By.ID, idChamp )  # Find the search box
     elem.clear()
@@ -37,7 +37,7 @@ def testInput( idChamp, idBouton, idResultat, entree, sortie ):
 
 
 
-
+# fonction test for fill in 
 def testMaj( testNom ):
     testInput( 'nom', 'bouton', 'resultat', testNom, testNom.upper())
 
@@ -47,7 +47,8 @@ print( "test majuscule ------------------------------")
 aTester=[ 'toto', 'rémi', '1234'  ]
 for mot in aTester:
     testMaj( mot )
-
+    
+# fonction for calcul
 print( "test calcul ------------------------------")
 def testCalcul( expression, resultat ):
     testInput( 'saisie', 'go', 'res', expression, resultat )
