@@ -72,4 +72,5 @@ scenarAdd2chiffre()
 scenarTestErreur()
 
 
-browser.quit()
+
+#browser.quit()
