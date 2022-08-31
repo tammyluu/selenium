@@ -14,8 +14,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 browser = webdriver.Chrome(service=Service(ChromeDriverManager().install())) # open chrôme
 
-browser.get('http://10.115.57.132:80/maPage.html') #navigate to home page "maPage"
-#browser.get('http://10.115.57.130:8080/MapageF.html')
+#browser.get('http://10.115.57.132:80/maPage.html') #navigate to home page "maPage"
+browser.get('http://10.115.57.148:8080/maPage.html')
 #browser.get('./maPage.html')
 # fonction for test Input and Output
 def testInput( idChamp, idBouton, idResultat, entree, sortie ):
@@ -23,7 +23,7 @@ def testInput( idChamp, idBouton, idResultat, entree, sortie ):
     elem.clear()
     elem.send_keys( entree )
 
-    bouton = browser.find_element(By.ID, idBouton )
+    bouton = browser.find_element(By.ID, idBouton )#Đặt tên biến là bouton. Sử dụng inspect trên Web để lấy được name của field "bouton"
     bouton.click()
 
     div = browser.find_element(By.ID, idResultat)
@@ -63,5 +63,5 @@ testCalcul( '2*4', '8')
 
 #assert result == testNom.upper()
 
-time.sleep(1)
-browser.quit()
+time.sleep(4)
+#browser.quit()

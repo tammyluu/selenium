@@ -22,8 +22,18 @@
 
             function magie()
             {
+                
                 saisie = document.getElementById( 'motMagique' ).value; 
-                somme = 0;
+                saisie = saisie.trim()
+                if (saisie != '' &&  !isNaN(saisie))
+                {
+                    saisie = saisie.toLowerCase()
+                    saisie  = cappitalizieFirstLettre (saisie)
+                    console.log(saisie)
+                    somme = 0;
+                }
+
+
                 for (var i = 0; i < saisie.length; i++) 
                     somme += saisie.charCodeAt(i);
                 document.getElementById( 'resultatMagique' ).innerHTML = 1 + somme % 13; 
